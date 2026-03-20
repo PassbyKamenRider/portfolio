@@ -2,20 +2,16 @@ import { Cpu } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Languages",
-    skills: ["C++", "C#", "Python", "HLSL/GLSL"],
+    title: "Programming Languages",
+    skills: ["C", "C++", "C#", "Java", "Python"],
   },
   {
-    title: "Graphics & Engine",
-    skills: ["OpenGL", "DirectX", "Vulkan", "Unity", "Unreal Engine"],
+    title: "Graphics",
+    skills: ["OpenGL", "Vulkan"],
   },
   {
-    title: "Tools & Platforms",
-    skills: ["Git", "CMake", "Visual Studio", "Linux", "Windows"],
-  },
-  {
-    title: "Other",
-    skills: ["Data Structures", "Algorithms", "Math/Linear Algebra", "Agile"],
+    title: "Game Engines",
+    skills: ["Unity3D", "Unreal 5", "GameMaker Studio", "Twine"],
   },
 ];
 
@@ -28,7 +24,7 @@ export function SkillsSection() {
           <h2 className="text-3xl font-bold">Skills</h2>
           <div className="flex-1 h-px bg-white/10 ml-4" />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category) => (
             <div
               key={category.title}

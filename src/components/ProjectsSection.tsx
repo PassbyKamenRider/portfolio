@@ -1,4 +1,5 @@
-import { Code2 } from "lucide-react";
+import { Code2, ExternalLink } from "lucide-react";
+import { projects } from "@/lib/constants";
 
 export function ProjectsSection() {
   return (
@@ -9,19 +10,54 @@ export function ProjectsSection() {
           <h2 className="text-3xl font-bold">Projects</h2>
           <div className="flex-1 h-px bg-white/10 ml-4" />
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[1, 2, 3, 4].map((i) => (
+          {projects.map((project) => (
             <div
-              key={i}
-              className="bg-bg-card border border-white/5 rounded-xl p-6 hover:border-accent/30 transition-colors"
+              key={project.title}
+              className="group bg-bg-card border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1"
             >
-              <div className="h-40 bg-bg-primary/50 rounded-lg mb-4 flex items-center justify-center text-text-muted">
-                Project {i}
+              {/* Project Header */}
+              <div className="flex items-start justify-between mb-4">
+                <h3 className="text-lg font-semibold group-hover:text-accent transition-colors leading-tight pr-2">
+                  {project.title}
+                </h3>
+                <div className="flex items-center gap-2 shrink-0">
+                  {project.site && (
+                    <a
+                      href={project.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-text-muted hover:text-accent transition-colors"
+                      aria-label={`Project site for ${project.title}`}
+                    >
+                      <ExternalLink size={18} />
+                    </a>
+                  )}
+                </div>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Coming Soon</h3>
-              <p className="text-text-secondary text-sm">
-                Project details will be added here.
+
+              {/* Role & Period */}
+              <p className="text-text-muted text-xs font-mono mb-3">
+                {project.role} &middot; {project.period}
               </p>
+
+              {/* Description */}
+              <p className="text-text-secondary text-sm leading-relaxed mb-5">
+                {project.description}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs font-mono px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
