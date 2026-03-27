@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Gamepad2 } from "lucide-react";
-import { gameJamEntries, localize } from "@/lib/constants";
+import { gameJamEntries, localize, assetPath } from "@/lib/constants";
 import { useLocale } from "@/lib/i18n";
 
 export function GameJamSection() {
@@ -29,7 +29,7 @@ export function GameJamSection() {
               {entry.coverImage && (
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <Image
-                    src={entry.coverImage}
+                    src={assetPath(entry.coverImage)}
                     alt={entry.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"

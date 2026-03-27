@@ -1,9 +1,16 @@
 import type { Locale } from "./i18n/dictionaries";
 
+const isProd = process.env.NODE_ENV === "production";
+export const basePath = isProd ? "/portfolio" : "";
+
 export type Bilingual = { en: string; zh: string };
 
 export function localize(value: Bilingual, locale: Locale): string {
   return value[locale];
+}
+
+export function assetPath(path: string): string {
+  return `${basePath}${path}`;
 }
 
 export const siteConfig = {

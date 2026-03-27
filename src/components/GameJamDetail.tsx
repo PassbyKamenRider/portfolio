@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink, Users, Monitor } from "lucide-react";
 import { useLocale } from "@/lib/i18n";
-import { localize, type GameJamEntry } from "@/lib/constants";
+import { localize, assetPath, type GameJamEntry } from "@/lib/constants";
 
 export function GameJamDetail({ entry }: { entry: GameJamEntry }) {
   const { locale, t } = useLocale();
@@ -25,7 +25,7 @@ export function GameJamDetail({ entry }: { entry: GameJamEntry }) {
         {entry.coverImage && (
           <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8">
             <Image
-              src={entry.coverImage}
+              src={assetPath(entry.coverImage)}
               alt={entry.title}
               fill
               className="object-cover"
@@ -78,7 +78,7 @@ export function GameJamDetail({ entry }: { entry: GameJamEntry }) {
                 className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/5"
               >
                 <Image
-                  src={src}
+                  src={assetPath(src)}
                   alt={`${entry.title} screenshot ${i + 1}`}
                   fill
                   className="object-cover"
