@@ -1,6 +1,6 @@
 "use client";
 
-import { Send, Mail, Github, Linkedin } from "lucide-react";
+import { Send, Mail, Github, Linkedin, Gamepad2 } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 import { useLocale } from "@/lib/i18n";
 
@@ -42,6 +42,15 @@ export function ContactSection() {
           >
             <Linkedin size={18} />
             LinkedIn
+          </a>
+          <a
+            href={siteConfig.itchio}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 border border-accent/30 text-accent rounded-lg hover:bg-accent/10 transition-colors"
+          >
+            <Gamepad2 size={18} />
+            itch.io
           </a>
         </div>
       </div>

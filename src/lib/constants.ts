@@ -25,6 +25,7 @@ export const siteConfig = {
   } as Bilingual,
   github: "https://github.com/PassbyKamenRider",
   linkedin: "https://www.linkedin.com/in/yifan-jiang-593650230/",
+  itchio: "https://passbykamenrider.itch.io/",
   email: "YifanJiangCZ@outlook.com",
 };
 

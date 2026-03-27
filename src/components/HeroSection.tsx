@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown, Gamepad2 } from "lucide-react";
 import { siteConfig, localize } from "@/lib/constants";
 import { useLocale } from "@/lib/i18n";
 
@@ -59,6 +59,15 @@ export function HeroSection() {
           >
             <Linkedin size={20} />
             <span className="text-sm font-medium">LinkedIn</span>
+          </a>
+          <a
+            href={siteConfig.itchio}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 px-5 py-2.5 border border-accent/30 rounded-lg text-accent hover:bg-accent/10 hover:border-accent transition-all duration-200"
+          >
+            <Gamepad2 size={20} />
+            <span className="text-sm font-medium">itch.io</span>
           </a>
           <a
             href={`mailto:${siteConfig.email}`}
