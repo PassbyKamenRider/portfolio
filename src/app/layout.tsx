@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LocaleProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="antialiased font-sans">
-        <Navbar />
-        {children}
-        <Footer />
+        <LocaleProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   );

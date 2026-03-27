@@ -1,18 +1,21 @@
+"use client";
+
 import { Send, Mail, Github, Linkedin } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
+import { useLocale } from "@/lib/i18n";
 
 export function ContactSection() {
+  const { t } = useLocale();
+
   return (
     <section id="contact" className="py-24">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex items-center justify-center gap-3 mb-8">
           <Send size={28} className="text-accent" />
-          <h2 className="text-3xl font-bold">Get In Touch</h2>
+          <h2 className="text-3xl font-bold">{t.sections.contact}</h2>
         </div>
         <p className="text-text-secondary mb-10 leading-relaxed">
-          I&apos;m currently open to new opportunities. Whether you have a
-          question, a project idea, or just want to say hi — feel free to reach
-          out!
+          {t.contact.description}
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a
@@ -20,7 +23,7 @@ export function ContactSection() {
             className="flex items-center gap-2 px-6 py-3 bg-accent text-bg-primary font-semibold rounded-lg hover:bg-accent-light transition-colors"
           >
             <Mail size={18} />
-            Say Hello
+            {t.contact.sayHello}
           </a>
           <a
             href={siteConfig.github}

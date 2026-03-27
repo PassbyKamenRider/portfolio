@@ -1,7 +1,12 @@
+"use client";
+
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
-import { siteConfig } from "@/lib/constants";
+import { siteConfig, localize } from "@/lib/constants";
+import { useLocale } from "@/lib/i18n";
 
 export function HeroSection() {
+  const { locale, t } = useLocale();
+
   return (
     <section
       id="home"
@@ -15,7 +20,7 @@ export function HeroSection() {
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
         {/* Greeting */}
         <p className="text-accent font-mono text-sm sm:text-base mb-4 tracking-wider">
-          Hi, my name is
+          {t.hero.greeting}
         </p>
 
         {/* Name */}
@@ -27,12 +32,12 @@ export function HeroSection() {
 
         {/* Title */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-text-secondary mb-6">
-          {siteConfig.title}
+          {localize(siteConfig.title, locale)}
         </h2>
 
         {/* Description */}
         <p className="text-text-secondary text-base sm:text-lg max-w-2xl mb-10 leading-relaxed">
-          {siteConfig.description}
+          {localize(siteConfig.description, locale)}
         </p>
 
         {/* Social Links */}
