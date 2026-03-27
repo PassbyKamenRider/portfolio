@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { navKeys, siteConfig } from "@/lib/constants";
+import { navKeys, siteConfig, localize } from "@/lib/constants";
 import { useLocale } from "@/lib/i18n";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +39,7 @@ export function Navbar() {
             href="/"
             className="text-lg font-bold text-accent hover:text-accent-light transition-colors"
           >
-            {siteConfig.name.split(" ")[0]}
+            {localize(siteConfig.name, locale).split(" ")[0]}
             <span className="text-text-primary">.</span>
           </Link>
 

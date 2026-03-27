@@ -26,7 +26,7 @@ export function HeroSection() {
         {/* Name */}
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4">
           <span className="bg-gradient-to-r from-accent-light via-accent to-cyan-300 bg-clip-text text-transparent">
-            {siteConfig.name}
+            {localize(siteConfig.name, locale)}
           </span>
         </h1>
 

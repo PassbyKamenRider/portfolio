@@ -14,7 +14,7 @@ export function assetPath(path: string): string {
 }
 
 export const siteConfig = {
-  name: "Yifan Jiang",
+  name: { en: "Yifan Jiang", zh: "蒋亦凡" } as Bilingual,
   title: {
     en: "Gameplay Programmer",
     zh: "游戏程序员",
